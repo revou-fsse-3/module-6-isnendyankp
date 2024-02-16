@@ -8,11 +8,11 @@ def get_pokemon():
     return "get pokemon"
 
 @pokemon_blueprint.route("/", methods=["POST"])
-def post_pokemon():
+def create_pokemon():
     return "post pokemon"
 
 @pokemon_blueprint.route("/", methods=["PUT"])
-def put_pokemon():
+def update_pokemon():
     return "put pokemon"
 
 @pokemon_blueprint.route("/", methods=["DELETE"])
