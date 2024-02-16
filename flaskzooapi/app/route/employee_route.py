@@ -2,29 +2,31 @@ from flask import Blueprint, jsonify
 
 employee_blueprint = Blueprint('employee_endpoint', __name__)
 
+employees = 'Daftar Employees :', [
+    {
+        'id': 1,
+        'name': 'Budi',
+        'position': 'Manager',
+        'department': 'IT'
+    },
+    {
+        'id': 2,
+        'name': 'Andi',
+        'position': 'Staff',
+        'department': 'IT'
+    },
+    {
+        'id': 3,
+        'name': 'Cindy',
+        'position': 'Manager',
+        'department': 'HRD'
+    }
+]
+
 # Method GET
 @employee_blueprint.route("/", methods=["GET"])
-def get_employees():
-    return jsonify('Daftar Employees :', [
-        {
-            'id': 1,
-            'name': 'Budi',
-            'position': 'Manager',
-            'department': 'IT'
-        },
-        {
-            'id': 2,
-            'name': 'Andi',
-            'position': 'Staff',
-            'department': 'IT'
-        },
-        {
-            'id': 3,
-            'name': 'Cindy',
-            'position': 'Manager',
-            'department': 'HRD'
-        }
-    ])
+def get_employee():
+    return 'berhasil', 200
 
 # Method POST
 @employee_blueprint.route("/", methods=["POST"])
