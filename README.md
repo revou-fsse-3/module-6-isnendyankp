@@ -16,5 +16,6 @@
 1. poetry run flask --app app run
 
 
-## step sqlalchemy:
+## step for manual database setup:
 1. poetry add Flask_SQLAlchemy (install flask_sqlalchemy)
+2. poetry add psycopg2 (install psycopg2)
