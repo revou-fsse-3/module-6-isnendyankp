@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, jsonify
 
 
 pokemon_blueprint = Blueprint('pokemon_endpoint', __name__)
@@ -20,7 +20,7 @@ pokemons = [
 
 @pokemon_blueprint.route("/", methods=["GET"])
 def get_pokemon():
-    return "get pokemon"
+    return jsonify(pokemons)
 
 @pokemon_blueprint.route("/", methods=["POST"])
 def create_pokemon():
