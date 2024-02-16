@@ -1,5 +1,5 @@
 from flask import Flask
-from app.route import pokemon_route
+from app.route import pokemon_route, customer_route
 import os
 from utils.database import db
 
@@ -16,4 +16,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = f"{DATABASE_TYPE}://{DATABASE_USER}:{DAT
 # initialize the database alchemy
 db.init_app(app)
 
+# register the blueprints
 app.register_blueprint(pokemon_route.pokemon_blueprint, url_prefix="/pokemons")
+app.register_blueprint(customer_route.customers_blueprint, url_prefix="/customers")
