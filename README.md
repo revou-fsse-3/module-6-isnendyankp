@@ -14,3 +14,7 @@
 
 ## step run:
 1. poetry run flask --app app run
+
+
+## step sqlalchemy:
+1. poetry add Flask_SQLAlchemy (install flask_sqlalchemy)
