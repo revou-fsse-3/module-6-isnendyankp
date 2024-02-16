@@ -9,7 +9,8 @@
 7. poetry config virtualenvs.in-project true (global only once)
 8. poetry add Flask
 9. Flask --version
-10. pip install flask 
+10. pip install flask
+11. poetry add poetry-dotenv-plugin
 
 ## step run:
 1. poetry run flask --app app run
