@@ -26,10 +26,10 @@ def get_pokemon():
 def create_pokemon():
     return "post pokemon"
 
-@pokemon_blueprint.route("/", methods=["PUT"])
-def update_pokemon():
-    return "put pokemon"
+@pokemon_blueprint.route("/<int:pokemon_id>", methods=["PUT"])
+def update_pokemon(pokemon_id):
+    return str(pokemon_id)
 
-@pokemon_blueprint.route("/", methods=["DELETE"])
-def delete_pokemon():
-    return "delete pokemon"
+@pokemon_blueprint.route("/<int:pokemon_id>", methods=["DELETE"])
+def delete_pokemon(pokemon_id):
+    return str(pokemon_id)
