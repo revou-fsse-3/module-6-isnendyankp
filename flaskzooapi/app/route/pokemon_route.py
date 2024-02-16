@@ -3,6 +3,21 @@ from flask import Blueprint
 
 pokemon_blueprint = Blueprint('pokemon_endpoint', __name__)
 
+# data  array for the pokemons
+
+pokemons = [
+    {
+        "id": 1,
+        "name": "bulbasaur",
+        "type": "grass"
+    },
+    {
+        "id": 2,
+        "name": "charmander",
+        "type": "fire"
+    },
+]
+
 @pokemon_blueprint.route("/", methods=["GET"])
 def get_pokemon():
     return "get pokemon"
