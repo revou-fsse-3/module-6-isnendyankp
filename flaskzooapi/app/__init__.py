@@ -1,10 +1,6 @@
 from flask import Flask
+from app.route import pokemon_route
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    return "Hello, Flask!"
-
-if __name__ == "__main__":
-    app.run()
+app.register_blueprint(pokemon_route.pokemon_blueprint, url_prefix="/pokemons")
