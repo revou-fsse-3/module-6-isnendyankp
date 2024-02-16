@@ -1,6 +1,7 @@
 from flask import Flask
 from app.route import pokemon_route
 import os
+from utils.database import db
 
 app = Flask(__name__)
 
@@ -11,5 +12,8 @@ DATABASE_PORT = os.getenv("DATABASE_PORT")
 DATABASE_USER = os.getenv("DATABASE_USER")
 DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
 app.config["SQLALCHEMY_DATABASE_URI"] = f"{DATABASE_TYPE}://{DATABASE_USER}:{DATABASE_PASSWORD}@{DATABASE_HOST}:{DATABASE_PORT}/{DATABASE_NAME}"
+
+# initialize the database alchemy
+db.init_app(app)
 
 app.register_blueprint(pokemon_route.pokemon_blueprint, url_prefix="/pokemons")
