@@ -18,4 +18,4 @@ db.init_app(app)
 
 # register the blueprints
 app.register_blueprint(pokemon_route.pokemon_blueprint, url_prefix="/pokemons")
-app.register_blueprint(customer_route.customers_blueprint, url_prefix="/customers")
+app.register_blueprint(customer_route.customer_blueprint, url_prefix="/customer")

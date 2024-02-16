@@ -1,21 +1,21 @@
 from flask import Blueprint, jsonify
 from app.utils.database import db
-from app.models.customers import Customer
+from app.models.customer import Customer
 
-customers_blueprint = Blueprint('customers_endpoint', __name__)
+customer_blueprint = Blueprint('customers_endpoint', __name__)
 
 # this is the route for the customer endpoint
-@customers_blueprint.route("/", methods=["GET"])
-def create_customers():
+@customer_blueprint.route("/", methods=["POST"])
+def create_customer():
     try:
         # create a new customer
-        customers = Customer()
+        customer = Customer()
         # set the customer attributes
-        customers.name = "John Doe"
-        customers.phone = "123-456-7890"
+        customer.name = "John Doe"
+        customer.phone = 872
         # add the customer to the database
-        db.session.add(customers)
+        db.session.add(customer)
         db.session.commit()
-        return 'Customer created successfully!', 200
+        return 'berhasil', 200
     except Exception as e:
         return e, 500
