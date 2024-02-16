@@ -1,7 +1,7 @@
 from flask import Flask
 from app.route import pokemon_route, customer_route
 import os
-from utils.database import db
+from app.utils.database import db
 
 app = Flask(__name__)
 
