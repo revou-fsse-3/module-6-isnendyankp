@@ -5,7 +5,7 @@ employee_blueprint = Blueprint('employee_endpoint', __name__)
 # Method GET
 @employee_blueprint.route("/", methods=["GET"])
 def get_employees():
-    return jsonify('Jenis-jenis Employees :', [
+    return jsonify('Daftar Employees :', [
         {
             'id': 1,
             'name': 'Budi',

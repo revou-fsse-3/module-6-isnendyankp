@@ -1,5 +1,5 @@
 from flask import Flask
-from app.route import pokemon_route, customer_route , animal_route
+from app.route import pokemon_route, customer_route, animal_route, employee_route
 import os
 from app.utils.database import db
 
@@ -20,3 +20,4 @@ db.init_app(app)
 app.register_blueprint(pokemon_route.pokemon_blueprint, url_prefix="/pokemons")
 app.register_blueprint(customer_route.customer_blueprint, url_prefix="/customer")
 app.register_blueprint(animal_route.animal_blueprint, url_prefix="/animal")
+app.register_blueprint(employee_route.employee_blueprint, url_prefix="/employee")
