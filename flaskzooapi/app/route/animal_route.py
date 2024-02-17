@@ -2,24 +2,29 @@ from flask import Blueprint, jsonify
 
 animal_blueprint = Blueprint('animal_endpoint', __name__)
 
-animals = 'Jenis-jenis Animals :', [
+# data array for the animals
+# data such as species, age, gender, special requirements
+animals = [
     {
         'id': 1,
-        'name': 'Gajah',
-        'jenis': 'Mamalia',
-        'habitat': 'Darat'
+        'species': 'Harimau',
+        'age': 5,
+        'gender': 'Jantan',
+        'special_requirements': 'Raw meat'
     },
     {
         'id': 2,
-        'name': 'Ikan',
-        'jenis': 'Pisces',
-        'habitat': 'Air'
+        'species': 'Gajah',
+        'age': 10,
+        'gender': 'Betina',
+        'special_requirements': 'Water bath'
     },
     {
         'id': 3,
-        'name': 'Burung',
-        'jenis': 'Aves',
-        'habitat': 'Udara'
+        'species': 'Jerapah',
+        'age': 7,
+        'gender': 'Jantan',
+        'special_requirements': 'High ceiling'
     }
 ]
 
