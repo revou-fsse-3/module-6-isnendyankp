@@ -23,10 +23,18 @@ animals = 'Jenis-jenis Animals :', [
     }
 ]
 
-# method GET
+# method GET: retrieve all animals in zoo
 @animal_blueprint.route("/", methods=["GET"])
 def get_animals():
     return jsonify(animals)
+
+# method GET: retrieve animal by id
+@animal_blueprint.route("/<int:animal_id>", methods=["GET"])
+def get_animal_by_id(animal_id):
+    for animal in animals:
+        if animal['id'] == animal_id:
+            return jsonify(animal)
+    return jsonify(error='Animal not found'), 404
 
 # method POST
 @animal_blueprint.route("/", methods=["POST"])
