@@ -23,10 +23,15 @@ employees = 'Daftar Employees :', [
     }
 ]
 
-# Method GET
+# Method GET retrieve all employees in zoo
 @employee_blueprint.route("/", methods=["GET"])
 def get_employee():
     return jsonify(employees)
+
+# Method GET retrieve employee by id
+@employee_blueprint.route("/<int:employee_id>", methods=["GET"])
+def get_employee_by_id(employee_id):
+    return str(employee_id)
 
 # Method POST
 @employee_blueprint.route("/", methods=["POST"])
