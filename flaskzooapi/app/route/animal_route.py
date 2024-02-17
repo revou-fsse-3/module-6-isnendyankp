@@ -41,17 +41,21 @@ def get_animal_by_id(animal_id):
             return jsonify(animal)
     return jsonify(error='Animal not found'), 404
 
-# method POST
+# method POST: add new animal to the zoo.
+# The request body should be in JSON format, such as: species, age, gener & special_requirements.
 @animal_blueprint.route("/", methods=["POST"])
 def create_animal():
     return 'berhasil', 200
 
-# method PUT
+# method PUT: update animal data by id
+# Update an existing animal by its id.
+# The request body should be in JSON format, such as: species, age, gener & special_requirements.
 @animal_blueprint.route("/", methods=["PUT"])
 def update_animal():
     return 'berhasil', 200
 
-# method DELETE
+# method DELETE: delete animal by id
+# Delete an existing animal by its id.
 @animal_blueprint.route("/", methods=["DELETE"])
 def delete_animal():
     return 'berhasil', 200
