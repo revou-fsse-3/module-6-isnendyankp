@@ -26,7 +26,7 @@ employees = 'Daftar Employees :', [
 # Method GET
 @employee_blueprint.route("/", methods=["GET"])
 def get_employee():
-    return 'berhasil', 200
+    return jsonify(employees)
 
 # Method POST
 @employee_blueprint.route("/", methods=["POST"])
