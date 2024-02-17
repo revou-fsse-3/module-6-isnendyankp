@@ -19,6 +19,7 @@ employees = [
         'email': 'andi@gmail.com',
         'phone': '08123456788',
         'role': 'Staff',
+        'schedule': 'Senin - Jumat'
     },
     {
         'id': 3,
@@ -26,6 +27,7 @@ employees = [
         'email': 'cindy@gmail.com',
         'phone': '08123456787',
         'role': 'Manager',
+        'schedule': 'Senin - Sabtu'
     }
 ]
 
