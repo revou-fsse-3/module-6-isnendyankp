@@ -4,6 +4,16 @@ from app.models.customer import Customer
 
 customer_blueprint = Blueprint('customers_endpoint', __name__)
 
+# Method GET retrieve all customers in zoo
+@customer_blueprint.route("/", methods=["GET"])
+def get_customers():
+    try:
+        # get all customers from the database
+        customers = Customer.query.all()
+        return jsonify([customer.as_dict() for customer in customers]), 200
+    except Exception as e:
+        return e, 500
+
 # this is the route for the customer endpoint
 @customer_blueprint.route("/", methods=["POST"])
 def create_customer():
