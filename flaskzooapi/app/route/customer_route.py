@@ -13,6 +13,16 @@ def get_customers():
         return jsonify([customer.as_dict() for customer in customers]), 200
     except Exception as e:
         return e, 500
+    
+# Method GET retrieve customer by id
+@customer_blueprint.route("/<int:customer_id>", methods=["GET"])
+def get_customer_by_id(customer_id):
+    try:
+        # get the customer from the database
+        customer = Customer.query.get(customer_id)
+        return jsonify(customer.as_dict()), 200
+    except Exception as e:
+        return e, 500
 
 # this is the route for the customer endpoint
 @customer_blueprint.route("/", methods=["POST"])
