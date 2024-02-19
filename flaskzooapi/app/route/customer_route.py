@@ -43,3 +43,21 @@ def create_customer():
         return 'berhasil', 200
     except Exception as e:
         return e, 500
+    
+# Method PUT update customer by id
+# Update customer by id, the request body should contain the updated details in JSON format.
+@customer_blueprint.route("/<int:customer_id>", methods=["PUT"])
+def update_customer(customer_id):
+    try:
+        # get the customer from the database
+        customer = Customer.query.get(customer_id)
+        # get data from request
+        data = request.json
+        # set the customer attributes
+        customer.name = data['name']
+        customer.email = data['email']
+        customer.phone_number = data['phone_number']
+        db.session.commit()
+        return 'berhasil', 200
+    except Exception as e:
+        return e, 500
