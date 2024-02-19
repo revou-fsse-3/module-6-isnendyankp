@@ -61,3 +61,16 @@ def update_customer(customer_id):
         return 'berhasil', 200
     except Exception as e:
         return e, 500
+    
+# Method DELETE delete customer by id
+@customer_blueprint.route("/<int:customer_id>", methods=["DELETE"])
+def delete_customer(customer_id):
+    try:
+        # get the customer from the database
+        customer = Customer.query.get(customer_id)
+        # delete the customer from the database
+        db.session.delete(customer)
+        db.session.commit()
+        return 'berhasil', 200
+    except Exception as e:
+        return e, 500
