@@ -41,3 +41,5 @@ def create_customer():
         db.session.add(customer)
         db.session.commit()
         return 'berhasil', 200
+    except Exception as e:
+        return e, 500
