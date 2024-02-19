@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from app.utils.database import db
 from app.models.customer import Customer
 
@@ -24,18 +24,20 @@ def get_customer_by_id(customer_id):
     except Exception as e:
         return e, 500
 
+# Method POST add new customer to the zoo.
 # this is the route for the customer endpoint
 @customer_blueprint.route("/", methods=["POST"])
 def create_customer():
     try:
-        # create a new customer
+        # get data from request
+        data = request.json
+        # create data customer
         customer = Customer()
         # set the customer attributes
-        customer.name = "John Doe"
-        customer.phone = 872
+        customer.name = data['name']
+        customer.email = data['email']
+        customer.phone_number = data['phone_number']
         # add the customer to the database
         db.session.add(customer)
         db.session.commit()
         return 'berhasil', 200
-    except Exception as e:
-        return e, 500
