@@ -1,4 +1,10 @@
-# Link documenation Zoo API
+# Week 16: Zoo API
+
+## Description
+
+This is a simple API for a zoo. It has a list of animals and their details. And this week we will adding unit tests to ensure code quality and reliability.
+
+## Link documenation Zoo API
 
 https://documenter.getpostman.com/view/32137747/2sA2r9V2pg
 
