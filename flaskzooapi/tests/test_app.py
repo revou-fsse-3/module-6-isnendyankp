@@ -16,8 +16,16 @@ def test_database_connection():
 
 # Test for Animal Model
 
-# This test for response status code 200 means that the request was successful
+# This Animal Model test for response status code 200 means that the request was successful
 def test_get_animals(client):
     with app.app_context():
         response = client.get('/animal/')
+        assert response.status_code == 200
+
+# Test for Employee Model
+        
+# This Employee Model test for response status code 200 means that the request was successful
+def test_get_employees(client):
+    with app.app_context():
+        response = client.get('/employee/')
         assert response.status_code == 200
