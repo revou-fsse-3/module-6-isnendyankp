@@ -30,3 +30,6 @@ https://documenter.getpostman.com/view/32137747/2sA2r9V2pg
 ## step for manual database setup:
 1. poetry add Flask_SQLAlchemy (install flask_sqlalchemy)
 2. poetry add psycopg2 (install psycopg2)
+
+## step for run testing:
+1. poetry run pytest
