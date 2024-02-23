@@ -7,11 +7,10 @@ def client():
     with app.test_client() as client:
         yield client
 
-
-# Test for Animal Model
-
-# This Animal Model test for response status code 200 means that the request was successful
-def test_get_animals(client):
+# Test for Employee Model
+        
+# This Employee Model test for response status code 200 means that the request was successful
+def test_get_employees(client):
     with app.app_context():
-        response = client.get('/animal/')
+        response = client.get('/employee/')
         assert response.status_code == 200
