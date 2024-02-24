@@ -31,8 +31,11 @@ https://documenter.getpostman.com/view/32137747/2sA2r9V2pg
 1. poetry add Flask_SQLAlchemy (install flask_sqlalchemy)
 2. poetry add psycopg2 (install psycopg2)
 
-## step for run testing:
+## step for run pytest testing:
 1. poetry run pytest
+
+## step for run coverage:
+1. poetry run pytest --cov=app
 
 ## step error while use coverage:
 1. pip install poetry-dotenv-plugin
