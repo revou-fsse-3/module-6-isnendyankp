@@ -33,3 +33,6 @@ https://documenter.getpostman.com/view/32137747/2sA2r9V2pg
 
 ## step for run testing:
 1. poetry run pytest
+
+## step error while use coverage:
+1. pip install poetry-dotenv-plugin
